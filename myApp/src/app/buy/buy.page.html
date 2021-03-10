@@ -1,0 +1,34 @@
+<ion-content>
+  <ion-list
+    style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="font-size: 30px;">Purchase list</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-item *ngFor="let i of this.data">
+
+      <ion-thumbnail slot="start">
+        <img src="{{ i.image }}" alt="">
+      </ion-thumbnail>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-title>ชื่อ : {{ i.title }}</ion-title>
+        </ion-item>
+
+        <ion-item>
+          <ion-title>ราคา : {{ i.price }}</ion-title>
+        </ion-item>
+      </ion-item-sliding>
+
+    </ion-item>
+      <ion-item>
+        <ion-title>ราคารวม : {{ sum | number:'1.1-2'}}</ion-title>
+      </ion-item>
+
+    <ion-button expand="block" (click)="sendData('BACK')"> BACK </ion-button>
+  </ion-list>
+</ion-content>
